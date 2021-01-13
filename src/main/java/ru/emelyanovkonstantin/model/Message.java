@@ -1,13 +1,20 @@
 package ru.emelyanovkonstantin.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import ru.emelyanovkonstantin.util.LocalDateDeserializer;
+import ru.emelyanovkonstantin.model.util.LocalDateDeserializer;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
+import java.util.List;
 
+/**
+ * Message
+ *
+ * @version 1.0
+ */
 @XmlRootElement(name = "message")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Message {
@@ -22,6 +29,17 @@ public class Message {
     private LocalDate destinationDate;
 
     private Integer price;
+
+    @XmlElementWrapper(name = "serviceRoutes")
+    private List<String> serviceRoute;
+
+    public List<String> getServiceRoute() {
+        return serviceRoute;
+    }
+
+    public void setServiceRoute(List<String> serviceRoute) {
+        this.serviceRoute = serviceRoute;
+    }
 
     public String getMailFrom() {
         return mailFrom;
