@@ -26,7 +26,7 @@
   * Send XML to ActiveMQ<br>
 ### Installation
 
-1. Clone the repo
+* Clone the repo
    ```sh
    git clone https://github.com/EmelyanovKonstantin/Spring-Camel-ActiveMQ.git
    ```
